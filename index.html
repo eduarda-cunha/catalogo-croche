@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ateliê de Crochê - Catálogo Premium</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- CORES --- */
+    :root {
+      --rosa-principal: #D8A4A6;
+      --rosa-suave: #EBC7C8;
+      --rosa-blush: #F4E3E3;
+      --rosa-profundo: #B27B7D;
+      --verde-folha: #7A8B7B;
+      --bege-claro: #F8F1EB;
+      --creme: #FCFAFA;
+      --texto-escuro: #4A3E3E;
+      --texto-suave: #7A6B6C;
+      --fonte-titulo: 'Playfair Display', serif;
+      --fonte-corpo: 'Montserrat', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--creme);
+      color: var(--texto-escuro);
+      font-family: var(--fonte-corpo);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--fonte-titulo);
+      font-weight: 400;
+      color: var(--rosa-profundo);
+    }
+
+    p {
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img, video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .leaf-icon {
+      width: 40px;
+      height: 40px;
+      fill: none;
+      stroke: var(--verde-folha);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.8;
+      margin: 0 auto 15px auto;
+      display: block;
+    }
+
+    .leaf-bg-left {
+      position: absolute;
+      left: -30px;
+      top: 20px;
+      width: 120px;
+      height: 120px;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .catalogo-img, .catalogo-video {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--rosa-suave);
+      box-shadow: 0 10px 20px rgba(216, 164, 166, 0.1);
+    }
+
+    .hero {
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+      background-image: linear-gradient(
+        rgba(252, 250, 250, 0.85), 
+        rgba(248, 241, 235, 0.9)
+      ), url('assets/images/supla2.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.65);
+      padding: 40px 30px;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--rosa-profundo);
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      margin-bottom: 10px;
+      line-height: 1.2;
+      color: var(--rosa-profundo);
+    }
+
+    .hero-location {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--verde-folha);
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .hero-tagline {
+      font-family: var(--fonte-titulo);
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--texto-escuro);
+    }
+
+    .sobre {
+      padding: 100px 0;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .perfil-container {
+      text-align: center;
+    }
+
+    .perfil-foto {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 20px auto;
+      border: 4px solid var(--rosa-blush);
+      box-shadow: 0 10px 25px rgba(216, 164, 166, 0.2);
+    }
+
+    .artesa-nome {
+      font-size: 1.4rem;
+      color: var(--rosa-profundo);
+      margin-bottom: 5px;
+    }
+
+    .artesa-cargo {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--verde-folha);
+    }
+
+    .sobre-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+    }
+
+    .sobre-text p {
+      margin-bottom: 20px;
+    }
+
+    /* --- COLEÇÕES / PRODUTOS --- */
+    .colecoes {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--rosa-principal);
+      margin-bottom: 60px;
+    }
+
+    .grid-produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+    }
+
+    .produto-card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--rosa-blush);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .produto-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(216, 164, 166, 0.15);
+    }
+
+    .produto-img, .produto-video {
+      height: 380px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .produto-categoria {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--rosa-principal);
+      font-weight: 500;
+    }
+
+    .produto-nome {
+      font-size: 1.5rem;
+      margin: 5px 0 10px 0;
+      color: var(--rosa-profundo);
+    }
+
+    .produto-desc {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .produto-detalhes {
+      border-top: 1px solid var(--rosa-blush);
+      padding-top: 15px;
+      font-size: 0.85rem;
+    }
+
+    .produto-detalhes div {
+      margin-bottom: 5px;
+    }
+
+    .produto-preco {
+      font-family: var(--fonte-titulo);
+      font-size: 1.2rem;
+      color: var(--rosa-profundo);
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    .mais-trabalhos {
+      padding: 80px 0;
+      background-color: #ffffff;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .galeria-item {
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--rosa-blush);
+      box-shadow: 0 5px 15px rgba(216, 164, 166, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .galeria-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(216, 164, 166, 0.25);
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* BOTÃO INSTAGRAM GALERIA */
+    .galeria-btn-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn-instagram-galeria {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--rosa-profundo);
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 5px 15px rgba(178, 123, 125, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-instagram-galeria:hover {
+      background-color: var(--rosa-principal);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(178, 123, 125, 0.4);
+    }
+
+    /* --- TABELA DE PREÇOS --- */
+    .tabela-precos-section {
+      padding: 80px 0;
+      background-color: var(--creme);
+    }
+
+    .tabela-container {
+      max-width: 800px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .tabela-precos {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--rosa-suave);
+      box-shadow: 0 5px 15px rgba(216, 164, 166, 0.1);
+    }
+
+    .tabela-precos th, .tabela-precos td {
+      padding: 15px 20px;
+      text-align: left;
+    }
+
+    .tabela-precos th {
+      background-color: var(--rosa-profundo);
+      color: #ffffff;
+      font-family: var(--fonte-titulo);
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .tabela-precos tr:nth-child(even) {
+      background-color: var(--creme);
+    }
+
+    .tabela-precos tr:hover {
+      background-color: var(--rosa-blush);
+    }
+
+    .tabela-precos td.valor {
+      font-weight: 600;
+      color: var(--rosa-profundo);
+      text-align: right;
+    }
+
+    .destaque-premium {
+      padding: 100px 0;
+      background-color: var(--rosa-blush);
+    }
+
+    .destaque-box {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      align-items: center;
+      border: 1px solid var(--rosa-suave);
+    }
+
+    .destaque-img {
+      height: 500px;
+    }
+
+    .destaque-texto h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .destaque-tag {
+      display: inline-block;
+      background: var(--rosa-suave);
+      color: var(--rosa-profundo);
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* --- PERSONALIZAÇÃO --- */
+    .personalizacao {
+      padding: 80px 0;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .personalizacao-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .personalizacao-item {
+      padding: 30px 20px;
+      background: var(--creme);
+      border-radius: 8px;
+      border: 1px dashed var(--rosa-principal);
+    }
+
+    .personalizacao-item h4 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+    .cuidados {
+      padding: 80px 0;
+    }
+
+    .cuidados-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .cuidado-card {
+      text-align: center;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid var(--rosa-blush);
+    }
+
+    .cuidado-numero {
+      font-family: var(--fonte-titulo);
+      font-size: 2rem;
+      color: var(--rosa-principal);
+      margin-bottom: 10px;
+    }
+    .contato {
+      padding: 100px 0;
+      background-color: var(--rosa-profundo);
+      color: var(--creme);
+      text-align: center;
+    }
+
+    .contato h2 {
+      color: var(--creme);
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+    }
+
+    .cidade-destaque {
+      font-size: 1.1rem;
+      color: var(--rosa-blush);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+
+    .contato p {
+      color: var(--rosa-blush);
+      margin-bottom: 40px;
+    }
+
+    .contato-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .btn-contato {
+      border: 1px solid var(--rosa-blush);
+      color: var(--creme);
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-contato:hover {
+      background-color: var(--rosa-blush);
+      color: var(--rosa-profundo);
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #8D5C5E;
+      color: var(--rosa-blush);
+      font-size: 0.8rem;
+    }
+
+    /* --- BOTÃO FLUTUANTE DO WHATSAPP --- */
+    .whatsapp-flutuante {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: #FFFFFF;
+      border-radius: 50px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .whatsapp-flutuante:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-flutuante svg {
+      width: 32px;
+      height: 32px;
+      fill: #FFFFFF;
+    }
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.2rem; }
+      .sobre-grid, .destaque-box { grid-template-columns: 1fr; }
+      .personalizacao-grid { grid-template-columns: 1fr 1fr; }
+      .whatsapp-flutuante {
+        bottom: 15px;
+        right: 15px;
+        width: 52px;
+        height: 52px;
+      }
+      .whatsapp-flutuante svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <svg class="leaf-icon" viewBox="0 0 24 24">
+        <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.5 8.4l1.2-1.2C5.3 17.8 4 15.1 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8c0 3.1-1.3 5.8-3.7 7.2l1.2 1.2c2.7-1.8 4.5-4.9 4.5-8.4 0-5.5-4.5-10-10-10z"/>
+        <path d="M12 22V6M12 12l4-4M12 16l3-3M12 8l-3 3"/>
+      </svg>
+      <p class="hero-subtitle">Ateliê Artisanal</p>
+      <h1 class="hero-title">CROCHÊ DA LUCINEIA</h1>
+      <p class="hero-location">📍 Uberlândia - MG</p>
+      <p class="hero-tagline">"Crochê artesanal que transforma fios em memórias."</p>
+    </div>
+  </header>
+
+  <section class="sobre">
+    <svg class="leaf-bg-left" viewBox="0 0 100 100">
+      <path fill="#7A8B7B" d="M50,0 C60,30 90,40 100,50 C70,60 60,90 50,100 C40,70 10,60 0,50 C30,40 40,10 50,0 Z"/>
+    </svg>
+
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="perfil-container">
+          <img src="assets/images/perfil.jpeg" alt="Foto da Artesã" class="perfil-foto">
+          <h3 class="artesa-nome">Lucineia</h3>
+          <p class="artesa-cargo">Fundadora & Criadora</p>
+        </div>
+
+        <div class="sobre-text">
+          <h2>Feito à Mão, Com Alma</h2>
+          <p>Bem-vindo ao nosso universo tátil. Cada ponto criado em nosso ateliê é fruto de um processo lento, calmo e profundamente atencioso. Acreditamos no valor do tempo investido na criação de peças únicas.</p>
+          <p>Utilizamos exclusivamente materiais de altíssima qualidade, priorizando fibras naturais que proporcionam toque suave, durabilidade e elegância atemporal para o seu lar e dia a dia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="colecoes container">
+    <svg class="leaf-icon" viewBox="0 0 24 24">
+      <path d="M12 2L9 9l-7 3 7 3 3 7 3-7 7-3-7-3z"/>
+    </svg>
+
+          <!-- Imagens Cards  -->
+    <h2 class="section-title">Coleções Autorais</h2>
+    <p class="section-subtitle">Aconchego e Sofisticação em Cada Ponto</p>
+
+    <div class="grid-produtos">
+      <article class="produto-card">
+        <video class="catalogo-video produto-video" controls autoplay loop muted playsinline>
+          <source src="assets/images/passadeira.mp4" type="video/mp4">
+          Seu navegador não suporta a exibição de vídeos.
+        </video>
+        <span class="produto-categoria">Passadeiras</span>
+        <h3 class="produto-nome">Passadeira Folha (1,30m)</h3>
+        <p class="produto-desc">Confira o caimento perfeito, a textura encorpada e os acabamentos artesanais no vídeo.</p>
+        <div class="produto-detalhes">
+          <div><strong>Tamanho:</strong> 1,30m</div>
+          <div><strong>Material:</strong> Fio de Algodão</div>
+        </div>
+        <div class="produto-preco">R$ 75,00</div>
+      </article>
+
+      <article class="produto-card">
+        <img src="assets/images/PassadeiraFolhaRetangular.jpeg" alt="Passadeira Folha Retangular" class="catalogo-img produto-img">
+        <span class="produto-categoria">Passadeiras</span>
+        <h3 class="produto-nome">Passadeira Folha Retangular</h3>
+        <p class="produto-desc">Modelo clássico com detalhes de folhas em formato retangular, proporcionando elegância para corredores, cozinhas e quartos.</p>
+        <div class="produto-detalhes">
+          <div><strong>Tamanho:</strong> 1,50m</div>
+          <div><strong>Material:</strong> Fio de Algodão</div>
+        </div>
+        <div class="produto-preco">R$ 85,00</div>
+      </article>
+
+      <article class="produto-card">
+        <img src="assets/images/portaCopoTurco.jpeg" alt="Porta-Copo Turco" class="catalogo-img produto-img">
+        <span class="produto-categoria">Mesa Posta</span>
+        <h3 class="produto-nome">Porta-Copo Turco</h3>
+        <p class="produto-desc">Detalhes finos com design rendado em ponto turco, unindo elegância e proteção para a sua mesa.</p>
+        <div class="produto-detalhes">
+          <div><strong>Material:</strong> 100% Algodão</div>
+        </div>
+        <div class="produto-preco">R$ 12,00 / un</div>
+      </article>
+
+      <article class="produto-card">
+        <img src="assets/images/supla.jpeg" alt="Porta-Copos Rosas" class="catalogo-img produto-img">
+        <span class="produto-categoria">Mesa Posta</span>
+        <h3 class="produto-nome">Porta-Copos Rosas</h3>
+        <p class="produto-desc">Design sofisticado inspirado em rosas, perfeito para compor mesas postas inesquecíveis.</p>
+        <div class="produto-detalhes">
+          <div><strong>Material:</strong> 100% Algodão</div>
+        </div>
+        <div class="produto-preco">R$ 10,00 / un</div>
+      </article>
+
+      <article class="produto-card">
+        <img src="assets/images/parapratos.jpeg" alt="Sousplat Turco" class="catalogo-img produto-img">
+        <span class="produto-categoria">Mesa Posta</span>
+        <h3 class="produto-nome">Sousplat Turco</h3>
+        <p class="produto-desc">Trama delicada com detalhes que remetem às flores, trazendo charme e aconchego.</p>
+        <div class="produto-detalhes">
+          <div><strong>Material:</strong> Fio Natural de Algodão</div>
+        </div>
+        <div class="produto-preco">R$ 30,00 / un</div>
+      </article>
+
+      <article class="produto-card">
+        <img src="assets/images/taça1.jpeg" alt="Porta Copos Corações" class="catalogo-img produto-img">
+        <span class="produto-categoria">Acessórios de Mesa</span>
+        <h3 class="produto-nome">Porta-Copo Corações</h3>
+        <p class="produto-desc">Pequenos detalhes elegantes para proteger sua mesa e acolher copos e taças.</p>
+        <div class="produto-detalhes">
+          <div><strong>Material:</strong> Fio Mercerizado</div>
+        </div>
+        <div class="produto-preco">R$ 10,00 / un</div>
+      </article>
+
+      <article class="produto-card">
+        <video class="catalogo-video produto-video" controls autoplay loop muted playsinline>
+          <source src="assets/images/CaminhoMesaTulipa.mp4" type="video/mp4">
+          Seu navegador não suporta a exibição de vídeos.
+        </video>
+        <span class="produto-categoria">Mesa Posta</span>
+        <h3 class="produto-nome">Caminho de Mesa Tulipa com 2 Rosas</h3>
+        <p class="produto-desc">Peça delicada trabalhada com detalhes em tulipa e aplicação de 2 rosas exclusivas.</p>
+        <div class="produto-detalhes">
+          <div><strong>Material:</strong> Fio 100% Algodão</div>
+        </div>
+        <div class="produto-preco">R$ 120,00</div>
+      </article>
+
+      <article class="produto-card">
+        <img src="assets/images/CaminhodeMesa.jpeg" alt="Caminho de Mesa Corações" class="catalogo-img produto-img">
+        <span class="produto-categoria">Mesa Posta</span>
+        <h3 class="produto-nome">Caminho de Mesa Corações</h3>
+        <p class="produto-desc">Peça central elegante para vestir sua mesa de jantar ou aparador.</p>
+        <div class="produto-detalhes">
+          <div><strong>Material:</strong> Fio 100% Algodão</div>
+        </div>
+        <div class="produto-preco">R$ 65,00</div>
+      </article>
+
+      <article class="produto-card">
+        <img src="assets/images/kitBanheiro.jpeg" alt="Kit de Banheiro em Crochê" class="catalogo-img produto-img">
+        <span class="produto-categoria">Jogos de Banheiro</span>
+        <h3 class="produto-nome">Kit de Banheiro Artesanal</h3>
+        <p class="produto-desc">Conjunto sofisticado para transformar seu banheiro.</p>
+        <div class="produto-detalhes">
+          <div>Jogo de Banheiro Folha</div>
+          <div><strong>Observação:</strong> O valor varia de acordo com a quantidade de peças e modelos escolhidos.</div>
+        </div>
+        <div class="produto-preco">R$ 150,00</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="mais-trabalhos">
+    <div class="container">
+      <h2 class="section-title">Mais Trabalhos</h2>
+      <p class="section-subtitle">Conheça toda a nossa galeria de criações exclusivas</p>
+
+      <div class="galeria-grid">
+        <div class="galeria-item">
+          <img src="assets/images/kitTapete.jpeg" alt="Caminho de Mesa em Crochê">
+        </div>
+        <div class="galeria-item">
+          <img src="assets/images/GaleriaMesaTapeteRosa.jpeg" alt="Conjunto de Mesa com Rosa">
+        </div>
+        <div class="galeria-item">
+          <img src="assets/images/GaleriaTapete.jpeg" alt="Tapete Redondo de Crochê">
+        </div>
+        <div class="galeria-item">
+          <img src="assets/images/GaleriaTapeteComRosaGrande.jpeg" alt="Tapete com Rosa Floral">
+        </div>
+        <div class="galeria-item">
+          <img src="assets/images/GaleriaTapeteGrande.jpeg" alt="Tapete Grande de Sala">
+        </div>
+        <div class="galeria-item">
+          <img src="assets/images/GaleriaTapeteGrande2.jpeg" alt="Tapete Grande com Detalhes">
+        </div>
+        <div class="galeria-item">
+          <img src="assets/images/GaleriaTapeteVermelho.jpeg" alt="Jogo de Tapetes de Crochê">
+        </div>
+        <div class="galeria-item">
+          <img src="assets/images/GaleriaPortaCopo.jpeg" alt="Jogo de Sousplat Rosa">
+        </div>
+        <div class="galeria-item">
+          <img src="assets/images/GaleriaTapeteGrandeVerde.jpeg" alt="Tapete Artesanal">
+        </div>
+      </div>
+
+      <div class="galeria-btn-container">
+        <a href="https://www.instagram.com/croche_da_lucineia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn-instagram-galeria">
+          📷 Ver Mais Fotos no Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tabela-precos-section">
+    <div class="container">
+      <h2 class="section-title">Quadro de Valores</h2>
+      <p class="section-subtitle">Tabela resumida para consulta rápida</p>
+
+      <div class="tabela-container">
+        <table class="tabela-precos">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th style="text-align: right;">Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Porta-Copo Turco</td>
+              <td class="valor">R$ 12,00 / un</td>
+            </tr>
+            <tr>
+              <td>Porta-Copo Coração</td>
+              <td class="valor">R$ 10,00 / un</td>
+            </tr>
+            <tr>
+              <td>Sousplat Tradicional</td>
+              <td class="valor">R$ 20,00</td>
+            </tr>
+            <tr>
+              <td>Sousplat Tulipa</td>
+              <td class="valor">R$ 20,00</td>
+            </tr>
+            <tr>
+              <td>Sousplat Coração</td>
+              <td class="valor">R$ 20,00</td>
+            </tr>
+            <tr>
+              <td>Sousplat Rosas</td>
+              <td class="valor">R$ 12,00</td>
+            </tr>
+            <tr>
+              <td>Porta-Copos Turco com Detalhes</td>
+              <td class="valor">R$ 30,00</td>
+            </tr>
+            <tr>
+              <td>Centro de Mesa</td>
+              <td class="valor">R$ 25,00</td>
+            </tr>
+            <tr>
+              <td>Tapete de Crochê</td>
+              <td class="valor">R$ 20,00</td>
+            </tr>
+            <tr>
+              <td>Tapete de Crochê (1,50m)</td>
+              <td class="valor">R$ 120,00</td>
+            </tr>
+            <tr>
+              <td>Passadeira Padrão</td>
+              <td class="valor">R$ 70,00</td>
+            </tr>
+            <tr>
+              <td>Passadeira Folha (1,30m)</td>
+              <td class="valor">R$ 75,00</td>
+            </tr>
+            <tr>
+              <td>Passadeira Folha Retangular (1,50m)</td>
+              <td class="valor">R$ 85,00</td>
+            </tr>
+            <tr>
+              <td>Caminho de Mesa</td>
+              <td class="valor">R$ 50,00</td>
+            </tr>
+            <tr>
+              <td>Kit de Banheiro (valor varia por peças/modelo)</td>
+              <td class="valor">R$ 150,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="destaque-premium">
+    <div class="container">
+      <div class="destaque-box">
+        <img src="assets/images/kitTapete.jpeg" alt="Jogo de Tapetes em Destaque" class="catalogo-img destaque-img">
+        <div class="destaque-texto">
+          <span class="destaque-tag">Destaque do Ateliê</span>
+          <h3>Jogo de Tapetes Especiais</h3>
+          <p>Trabalhado em fio nobre, nosso conjunto de tapetes proporciona elegância e aconchego para o seu lar.</p>
+          <br>
+          <p>Feito sob encomenda com atenção extrema aos detalhes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="personalizacao container">
+    <h2 class="section-title">Peças Exclusivas & Sob Medida</h2>
+    <p class="section-subtitle">Criamos peças que contam a sua história</p>
+
+    <div class="personalizacao-grid">
+      <div class="personalizacao-item">
+        <h4>Cores</h4>
+        <p>Escolha em nossa paleta de tons rosados, pastéis e neutros.</p>
+      </div>
+      <div class="personalizacao-item">
+        <h4>Tamanhos</h4>
+        <p>Dimensionamos a peça perfeitamente para o seu espaço.</p>
+      </div>
+      <div class="personalizacao-item">
+        <h4>Detalhes</h4>
+        <p>Aplicação de bordados, monogramas e acabamentos únicos.</p>
+      </div>
+      <div class="personalizacao-item">
+        <h4>Projetos</h4>
+        <p>Desenvolvimento de coleções sob encomenda para eventos e decoração.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cuidados container">
+    <h2 class="section-title">Guia de Cuidados</h2>
+    <p class="section-subtitle">Preserve a beleza artesanal por gerações</p>
+
+    <div class="cuidados-grid">
+      <div class="cuidado-card">
+        <div class="cuidado-numero">01</div>
+        <h4>Lavagem Delicada</h4>
+        <p>Lave sempre à mão utilizando sabão neutro. Não esfregue ou torça a peça.</p>
+      </div>
+      <div class="cuidado-card">
+        <div class="cuidado-numero">02</div>
+        <h4>Secagem Plana</h4>
+        <p>Seque na horizontal, à sombra. Evite pendurar para não deformar a trama.</p>
+      </div>
+      <div class="cuidado-card">
+        <div class="cuidado-numero">03</div>
+        <h4>Sem Alvejantes</h4>
+        <p>Não use produtos à base de cloro para manter o tom natural dos fios.</p>
+      </div>
+      <div class="cuidado-card">
+        <div class="cuidado-numero">04</div>
+        <h4>Armazenamento</h4>
+        <p>Guarde em local seco e arejado, de preferência dobrado em sacos de algodão.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato">
+    <div class="container">
+      <h2>Encomendas & Atendimento</h2>
+      <p class="cidade-destaque">📍 Uberlândia - MG</p>
+      <p>Estamos à disposição para criar sua peça dos sonhos ou tirar dúvidas.</p>
+
+      <div class="contato-links">
+        <a href="https://wa.me/553498240688" target="_blank" class="btn-contato">
+          💬 WhatsApp
+        </a>
+        <a href="https://www.instagram.com/croche_da_lucineia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn-contato">
+          📷 Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/553498240688" target="_blank" class="whatsapp-flutuante" title="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32">
+      <path d="M16 2a13.9 13.9 0 0 0-12 21l-2 7.3 7.5-2A13.9 13.9 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.2-4.4 1.1 1.2-4.3-.3-.5A11.6 11.6 0 1 1 16 27.5zm6.3-8.6c-.3-.2-2-.1-2.3-1.1s-.6-1.3-.9-1.3-.6 0-.9.3c-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.6 5 2.8 1.2 3.3.9 3.9.9s2-.8 2.3-1.6c.3-.8.3-1.5.2-1.6-.1-.2-.4-.3-.8-.5z"/>
+    </svg>
+  </a>
+
+  <footer>
+    <p>&copy; 2026 Crochê da Lucineia Ateliê • Uberlândia-MG. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
